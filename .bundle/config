@@ -1,0 +1,3 @@
+---
+BUNDLE_BUILD__TEST123: "--test-option=blah"
+BUNDLE_JOBS: "4"
