@@ -1,0 +1,35 @@
+[user]
+	name = technovangelist
+	email = mattw@datadoghq.com
+[alias]
+	co = checkout
+	cob = checkout -b
+	com = checkout master
+	c = commit
+	s = status
+	rb = for-each-ref --sort=-committerdate --format='%(committerdate:relative)%09%(authorname)%09 - %(refname:short)' refs/heads/
+	pr = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1; }; f"
+	st = status --short --branch
+[push]
+	default = simple
+[merge]
+	tool = Kaleidoscope
+[mergetool "diffmerge"]
+	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
+	trustExitCode = true
+[difftool "diffmerge"]
+	cmd = /usr/bin/diffmerge \"$LOCAL\" \"$REMOTE\"
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+	keepBackup = true
+[diff]
+	tool = Kaleidoscope
+[core]
+	editor = /Applications/Komet.app/Contents/MacOS/Komet
