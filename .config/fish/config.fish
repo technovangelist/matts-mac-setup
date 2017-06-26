@@ -3,7 +3,7 @@
 #rbenv init - | source
 source /usr/local/share/chruby/chruby.fish
 source /usr/local/share/chruby/auto.fish
-
+ 
 function getkey
   security find-generic-password -a mattw -s $argv[1] -w
 end
@@ -11,7 +11,7 @@ end
 alias stt "subl ."
 alias st "subl $argv"
 alias curl-trace 'curl -w "@/Users/mattw/.curl-format" -o /dev/null -s'
-alias vim "mvim -v"
+# alias vim "mvim -v"
 alias tsinit "npm init -y;tsc --init --target es2016 --typeroots "node_modules/@types";npm install @types/node --save-dev;touch index.ts;npm install ts-node --save-dev;npm install nodemon --save-dev"
 
 # set -gx PYTHONPATH /usr/local/lib/python2.7/site-packages
